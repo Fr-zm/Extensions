@@ -1,0 +1,35 @@
+{
+  "name": "Cracked",
+  "version": "0.1.0",
+  "description": "Finding cracked version of a game on steam for free!",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.steampowered.com/app/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.steampowered.com/app/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/icon.png",
+      "24": "assets/icon.png",
+      "32": "assets/icon.png"
+    },
+    "default_title": "Want some CRACK?",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
